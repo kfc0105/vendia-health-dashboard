@@ -1,0 +1,32 @@
+
+.button {
+  width: 15em;
+  height: 7em;
+  border-radius: 30em;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+ }
+ 
+ .button::before {
+  content: '';
+  width: 0;
+  height: 7em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #c6feff 0%, #52fdb8 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ .button:hover::before {
+  width: 15em;
+ }
