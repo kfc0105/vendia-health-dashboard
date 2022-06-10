@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Button } from '@mui/material';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import OptionButtonsCSS from './OptionButtonsCSS.css'
 
 
 function OptionButtonsLP() {
@@ -18,17 +19,20 @@ function OptionButtonsLP() {
 
     return (
         <STYLE_1>
-           <Grid container spacing = {2}>
-                <Grid item xs={6} md={6} lg={6}>
-                    <Button variant="contained" sx={{
-                        borderRadius: 50
-                    }} onClick={routeChangeNewData}> Add New Data </Button>
+           <Grid container spacing = {2} direction="row"
+                >
+                <Grid item xs={6} md={6} lg={6} alignItems="center">
+                    <button className="button" 
+                            onClick={routeChangeNewData}>
+                                <span class="text">+ Create Employee</span>
+                    </button>
                 </Grid>
 
-                <Grid item xs={6} md={6} lg={6}>
-                    <Button variant="contained" sx={{
-                        borderRadius: 50
-                    }} onClick={routeChangeViewData}> View Data </Button>
+                <Grid item xs={6} md={6} lg={6} alignItems="center">
+                    <button className="button" role="button" 
+                            onClick={routeChangeViewData}>
+                                <span class="text">View Employee Data</span>
+                    </button>
                 </Grid>
             </Grid> 
         </STYLE_1>
