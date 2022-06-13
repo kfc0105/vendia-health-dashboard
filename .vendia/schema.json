@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Uni Schema",
+  "description": "Empty uni schema",
+  "type": "object",
+  "properties": {}
+}
