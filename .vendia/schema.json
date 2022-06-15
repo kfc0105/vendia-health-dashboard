@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Employee Health",
+  "description": "Employee health uni schema",
+  "type": "object",
+  "properties": {
+    "Employee": {
+      "description": "Employee type",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "description": "First name",
+            "type": "string"
+          },
+          "lastName": {
+            "description": "Last name",
+            "type": "string"
+          },
+          "age": {
+            "description": "Age in years",
+            "type": "number"
+          },
+          "genderID": {
+            "description": "Gender identity",
+            "type": "string"
+          },
+          "height": {
+            "description": "Height in feet",
+            "type": "number"
+          },
+          "weight": {
+            "description": "Weight in pounds",
+            "type": "number"
+          },
+          "bodyTemp": {
+            "description": "Body temperature in Fahrenheit",
+            "type": "number"
+          },
+          "pulseRate": {
+            "description": "Pulse rate in beats per minute",
+            "type": "number"
+          },
+          "bloodPressureSystolic": {
+            "description": "Systolic blood pressure",
+            "type": "number"
+          },
+          "bloodPressureDiastolic": {
+            "description": "Diastolic blood pressure",
+            "type": "number"
+          },
+          "respirationRate": {
+            "description": "Respiration rate in breaths per minute",
+            "type": "number"
+          },
+          "avgWklyExercise": {
+            "description": "Average hours of exercise per week",
+            "type": "number"
+          },
+          "vacationBalance": {
+            "description": "Vacation hours",
+            "type": "number"
+          },
+          "avgWklyHrs": {
+            "description": "Average hours of work per week",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
