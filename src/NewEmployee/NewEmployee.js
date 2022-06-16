@@ -5,12 +5,7 @@ import styledComp from 'styled-components';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-
-
-import { styled } from '@mui/material/styles';
-import Slider from '@mui/material/Slider';
-import MuiInput from '@mui/material/Input';
-
+import NewEmpStyle from './NewEmpStyle.scss';
 
 function NewEmployee() {
 
@@ -20,46 +15,18 @@ function NewEmployee() {
         navigate('/');
     }
 
-    const [value, setValue] = React.useState(30);
-
-    const handleSliderChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-    const handleInputChange = (event) => {
-        setValue(event.target.value === '' ? '' : Number(event.target.value));
-    };
-
-    const handleBlur = () => {
-        if (value < 0) {
-        setValue(0);
-        } else if (value > 100) {
-        setValue(100);
-        }
-    };
-
-    const Input = styled(MuiInput)`
-        width: 42px;
-    `;
-
-    
-
     return (
         <>
         <CssBaseline>
-            <h1>This is the New Employee Page</h1>
+            <STYLE_TOP> <h1>Create New Employee</h1> </STYLE_TOP>
             <br/>
-            <Button variant="contained" sx={{
-                        borderRadius: 50
-                    }} onClick={routeChangeReturnHome}> Return Home </Button>
-
-                    </CssBaseline>
-
+            <Button sx={{borderRadius: 50}} onClick={routeChangeReturnHome}> Return Home </Button>
+        </CssBaseline>
             <br/>
             <br/>
             <br/>
-            <br/><br/><br/><br/><br/>
-
+            <br/>
+            <MARGINS>
             <Box sx={{ flexGrow: 0 }}>
             <Grid
                 container
@@ -69,143 +36,198 @@ function NewEmployee() {
                 align="center"
                 >
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', textAlign: 'center', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4fad4', borderRadius: 10}}
                            elevation={6}>
                         <STYLE> Name </STYLE>
                         <br/>
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                
+                            <label>
+                                <input type="text" placeholder="Last name"/>
+                            </label>
+                        </form>
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', textAlign: 'center', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4eafa', borderRadius: 10}}
                            elevation={6}>
                         <STYLE> Age </STYLE>
                         <br/>
-                        <Grid item xs>
-                            <SLIDER_FORMAT> 
-                            <Slider
-                                value={typeof value === 'number' ? value : 0}
-                                onChange={handleSliderChange}
-                                aria-labelledby="input-slider"
-                            />
-
-                            </SLIDER_FORMAT>
-                            
-                        </Grid>
-                        <Grid item>
-                            <Input
-                                value={value}
-                                size="small"
-                                onChange={handleInputChange}
-                                onBlur={handleBlur}
-                                inputProps={{
-                                  step: 10,
-                                  min: 0,
-                                  max: 100,
-                                  type: 'number',
-                                  'aria-labelledby': 'input-slider',
-                                }}
-                            />
-                        </Grid>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', textAlign: 'center', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4fad4', borderRadius: 10}}
                            elevation={6}>
                         <STYLE> Gender </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4eafa', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Height </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4fad4', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Weight </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4eafa', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Body Temperature </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4fad4', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Pulse Rate </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4eafa', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Blood pressure </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4fad4', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Respiration rate </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4eafa', borderRadius: 10, fontSize: 1}}
                            elevation={6}>
                                
                         <STYLE> Avg hours of exercise per week </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4fad4', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Vacation Balance </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                    <Paper sx={{ height: 300, width: 400, backgroundColor: 'white', borderRadius: 10}}
+                    <Paper sx={{ height: 300, width: 365, backgroundColor: '#b4eafa', borderRadius: 10}}
                            elevation={6}>
                                
                         <STYLE> Avg hours of work per week </STYLE>
+                        <br/>
+                        <form>
+                            <label>
+                                <input type="text" placeholder="First name"/>
+                            </label>
+                        </form>
                         
                     </Paper>
                     </Grid>
                 </Grid>
             </Box>
-
-        
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            </MARGINS>
         </>
     )
 }
 
 const STYLE = styledComp.div`
-padding-top: 1rem;
-text-align: center;
-font-family: 'Ubuntu', sans-serif;
-font-size: 1.5rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
 `;
 
-const SLIDER_FORMAT = styledComp.div`
-    margin-right: 3.5rem;
-    margin-left: 3.5rem;
-`
+const MARGINS = styledComp.div`
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+`;
 
+const STYLE_TOP = styledComp.div`
+    background-image: linear-gradient(144deg,#adffd0, #8afff7 50%,#a3d9ff);
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+`;
 
 export default NewEmployee;
