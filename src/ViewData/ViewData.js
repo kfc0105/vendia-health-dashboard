@@ -15,7 +15,7 @@ function ViewData() {
   return (
     <>
       <STYLE_1>
-        <h1>Employee Data Summary</h1>
+        <h1>Employee Data summary</h1>
       </STYLE_1>
       <CssBaseline>
         <br />
