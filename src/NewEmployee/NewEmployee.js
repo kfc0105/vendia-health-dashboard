@@ -5,7 +5,7 @@ import styledComp from 'styled-components';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import NewEmpStyle from './NewEmpStyle.scss';
+import NewEmpStyle from './NewEmpStyle.css';
 
 function NewEmployee() {
 
@@ -58,7 +58,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Age"/>
                             </label>
                         </form>
                     </Paper>
@@ -70,7 +70,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Gender"/>
                             </label>
                         </form>
                     </Paper>
@@ -83,7 +83,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Height"/>
                             </label>
                         </form>
                         
@@ -97,7 +97,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Weight"/>
                             </label>
                         </form>
                         
@@ -111,7 +111,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Body Temperature"/>
                             </label>
                         </form>
                         
@@ -125,7 +125,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Pulse Rate"/>
                             </label>
                         </form>
                         
@@ -139,7 +139,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Blood pressure"/>
                             </label>
                         </form>
                         
@@ -153,7 +153,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Respiration Rate"/>
                             </label>
                         </form>
                         
@@ -167,7 +167,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Avg hours of exercise per week"/>
                             </label>
                         </form>
                         
@@ -181,7 +181,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Vacation Balance"/>
                             </label>
                         </form>
                         
@@ -195,7 +195,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Avg hours of work per week"/>
                             </label>
                         </form>
                         
