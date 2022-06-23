@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { getAllEmplQuery, getEmplQuery } from "../vendia/queries";
 import { client } from "../App";
 import { useAsync } from "react-async";
@@ -17,37 +17,43 @@ async function getAllEmplData() {
 function DataTable() {
   
   const columns = [
-    { headerName: "First Name", field: "firstName", width: 70 },
-    { headerName: "Last Name", field: "lastName", width: 70 },
+    { headerName: "First Name", field: "firstName", width: 100 },
+    { headerName: "Last Name", field: "lastName", width: 100 },
     { headerName: "Age", field: "age", width: 70 },
     { headerName: "Gender", field: "genderID", width: 70 },
     { headerName: "Height", field: "height", width: 70 },
     { headerName: "Weight", field: "weight", width: 70 },
-    { headerName: "Body Temperature", field: "bodyTemp", width: 140 },
+    { headerName: "Body Temp.", field: "bodyTemp", width: 100 },
     { headerName: "Pulse Rate", field: "pulseRate", width: 90 },
-    { headerName: "Blood Pressure Systolic", field: "bloodPressureSystolic", width: 120 },
-    { headerName: "Blood Pressure Diastolic", field: "bloodPressureDiastolic", width: 120 },
+    { headerName: "BP Systolic", field: "bloodPressureSystolic", width: 100 },
+    { headerName: "BP Diastolic", field: "bloodPressureDiastolic", width: 100 },
     { headerName: "Respiration Rate", field: "respirationRate", width: 130 },
     {
-      headerName: "Average Exercise Per Week",
+      headerName: "Avg Exercise Per Week",
       field: "avgWklyExercise",
-      width: 220,
+      width: 175,
     },
     { headerName: "Vacation Balance", field: "vacationBalance", width: 130 },
-    { headerName: "Average Work Week", field: "avgWklyHrs", width: 170 },
+    { headerName: "Avg Work Week", field: "avgWklyHrs", width: 120 },
   ];
   
   const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
   if (isPending) return "Loading..."
   if (data)
     return (
-      <DataGrid
+      <div style={{ height: 400, width: '100%' }}>
+        <DataGrid
         getRowId={(row) => row._id}
+        autoHeight
         rows={data}
         columns={columns}
         pageSize={15}
         checkboxSelection
-      ></DataGrid>
+        components={{ Toolbar: GridToolbar }}
+        rowsPerPageOptions={[15, 30, 60]}
+        />
+      </div>
+      
     );
 }
 
