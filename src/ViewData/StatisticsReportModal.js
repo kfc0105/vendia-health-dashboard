@@ -6,7 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
-export default function AlertDialog() {
+export default function StatisticsReportModal() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -19,8 +19,17 @@ export default function AlertDialog() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Statistics Report
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={handleClickOpen}
+        sx={{
+          borderRadius: 30,
+          display: "flex",
+        }}
+      >
+        {" "}
+        Statistics Report{" "}
       </Button>
       <Dialog
         open={open}
