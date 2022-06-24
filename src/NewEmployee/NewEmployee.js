@@ -5,10 +5,8 @@ import styledComp from 'styled-components';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import NewEmpStyle from './NewEmpStyle.scss';
-import { addEmplMutation } from "../vendia/queries";
+import NewEmpStyle from './NewEmpStyle.css';
 import { client } from "../App";
-import { useAsync } from "react-async";
 const { entities } = client;
 
 //If the initial input is empty
@@ -29,7 +27,7 @@ const initialFormData = Object({
     '"weight"': 0
   });
 
-import NewEmpStyle from './NewEmpStyle.css';
+
 
 function NewEmployee() {
 
@@ -197,7 +195,10 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input name='"bloodPressureDiastolic"' type="text" placeholder="Enter" onChange={handleChange}/>
+                                <input name='"bloodPressureSystolic"' type="text" placeholder="Enter systolic value" onChange={handleChange}/>
+                            </label>
+                            <label>
+                                <input name='"bloodPressureDiastolic"' type="text" placeholder="Enter diastolic value" onChange={handleChange}/>
                             </label>
                         </form>
                         
