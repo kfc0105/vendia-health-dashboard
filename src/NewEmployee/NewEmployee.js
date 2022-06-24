@@ -29,6 +29,7 @@ const initialFormData = Object({
     '"weight"': 0
   });
 
+import NewEmpStyle from './NewEmpStyle.css';
 
 function NewEmployee() {
 

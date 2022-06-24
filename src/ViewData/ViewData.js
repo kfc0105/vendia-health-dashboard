@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SendIcon from "@mui/icons-material/Send";
 import DataTable from "./DataTable";
+import StatisticsReportModal from "../ViewData/StatisticsReportModal";
 
 function ViewData() {
   let navigate = useNavigate();
@@ -15,7 +16,7 @@ function ViewData() {
   return (
     <>
       <STYLE_1>
-        <h1>Employee Data Summary</h1>
+        <h1>Employee Data summary</h1>
       </STYLE_1>
       <CssBaseline>
         <br />
@@ -32,30 +33,7 @@ function ViewData() {
           Return Home{" "}
         </Button>
         <br />
-        <Button
-          variant="contained"
-          color="secondary"
-          endIcon={<SendIcon />}
-          sx={{
-            borderRadius: 30,
-            display: "flex",
-          }}
-        >
-          {" "}
-          Share Selection{" "}
-        </Button>
-        <br />
-        <Button
-          variant="contained"
-          color="secondary"
-          sx={{
-            borderRadius: 30,
-            display: "flex",
-          }}
-        >
-          {" "}
-          Statistics Report{" "}
-        </Button>
+        <StatisticsReportModal />
         <br />
       </CssBaseline>
       <div style={{ height: 400, width: "100%" }}>
