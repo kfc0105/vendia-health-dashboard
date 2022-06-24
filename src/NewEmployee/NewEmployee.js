@@ -11,18 +11,8 @@ import { client } from "../App";
 import { useAsync } from "react-async";
 const { entities } = client;
 
-
-async function asyncCall(input) {
-    
-    const response = await entities.employee.add({
-        input
-    });
-    
-    console.log(response)
-}
-
 //If the initial input is empty
-const initialFormData = Object.freeze({
+const initialFormData = Object({
     '"age"': 0,
     '"avgWklyExercise"': 0,
     '"avgWklyHrs"': 0,
@@ -50,18 +40,35 @@ function NewEmployee() {
     
     const [input, updateFormData] = React.useState(initialFormData);
 
+            
     const handleChange = (e) => {
         updateFormData({
             ...input,
             [e.target.name]: e.target.value.trim()
         });
-      };
+
+    };
     
-      const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(input);
-        asyncCall(input)
-      };
+        console.log(input['"age"']);
+        const response = await entities.employee.add({
+            "age": parseFloat(input['"age"']),
+            "avgWklyExercise": parseFloat(input['"avgWklyExercise"']),
+            "avgWklyHrs": parseFloat(input['"avgWklyHrs"']),
+            "bloodPressureDiastolic": parseFloat(input['"bloodPressureDiastolic"']),
+            "bloodPressureSystolic": parseFloat(input['"bloodPressureSystolic"']),
+            "bodyTemp": parseFloat(input['"bodyTemp"']),
+            "firstName": input['"firstName"'],
+            "genderID": input['"genderID"'],
+            "height": parseFloat(input['"height"']),
+            "lastName": input['"lastName"'],
+            "pulseRate": parseFloat(input['"pulseRate"']),
+            "respirationRate": parseFloat(input['"respirationRate"']),
+            "vacationBalance": parseFloat(input['"vacationBalance"']),
+            "weight": parseFloat(input['"weight"'])
+        });
+    };  
 
 
 
