@@ -21,14 +21,14 @@ function OptionButtonsLP() {
         <STYLE_1>
            <Grid container spacing = {2} direction="row"
                 >
-                <Grid item xs={6} md={6} lg={6} alignItems="center">
+                <Grid item xs={12} sm={12} md={12} lg={12} alignItems="center">
                     <button className="button" 
                             onClick={routeChangeNewData}>
-                                <span class="text">+ Create Employee</span>
+                                <span class="text">Create New Employee</span>
                     </button>
                 </Grid>
 
-                <Grid item xs={6} md={6} lg={6} alignItems="center">
+                <Grid item xs={12} sm={12} md={12} lg={12} alignItems="center">
                     <button className="button" role="button" 
                             onClick={routeChangeViewData}>
                                 <span class="text">View Employee Data</span>

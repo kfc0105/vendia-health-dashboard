@@ -1,9 +1,9 @@
 
 .button {
-  width: 15em;
-  height: 7em;
-  border-radius: 30em;
-  font-size: 30px;
+  width: 22em;
+  height: 3em;
+  border-radius: 1em;
+  font-size: 26px;
   font-family: 'Ubuntu', sans-serif;
   border: none;
   position: relative;
@@ -16,8 +16,8 @@
  .button::before {
   content: '';
   width: 0;
-  height: 7em;
-  border-radius: 30em;
+  height: 3em;
+  border-radius: 1em;
   position: absolute;
   top: 0;
   left: 0;
@@ -28,5 +28,5 @@
  }
  
  .button:hover::before {
-  width: 15em;
+  width: 25em;
  }
