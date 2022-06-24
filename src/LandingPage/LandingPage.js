@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TitleBarTop from './TitleBarTop.js';
 import OptionButtonsLP from './OptionButtonsLP.js'
+import DisplayAverages from './DisplayAverages.js';
 
 function LandingPage() {
     return (
@@ -10,9 +11,11 @@ function LandingPage() {
             <TitleBarTop/>
             <br/>
             <br/>
-            <br/>
-            <br/>
             <OptionButtonsLP/>
+            <br/>
+            <br/>
+            <br/>
+            <DisplayAverages/>
         </CssBaseline>
     )
 }
