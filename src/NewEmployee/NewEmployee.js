@@ -51,7 +51,7 @@ function NewEmployee() {
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(input['"age"']);
+        console.log(input);
         const response = await entities.employee.add({
             "age": parseFloat(input['"age"']),
             "avgWklyExercise": parseFloat(input['"avgWklyExercise"']),
