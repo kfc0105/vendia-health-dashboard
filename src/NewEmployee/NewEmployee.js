@@ -5,6 +5,30 @@ import styledComp from 'styled-components';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import NewEmpStyle from './NewEmpStyle.scss';
+import { addEmplMutation } from "../vendia/queries";
+import { client } from "../App";
+import { useAsync } from "react-async";
+const { entities } = client;
+
+//If the initial input is empty
+const initialFormData = Object({
+    '"age"': 0,
+    '"avgWklyExercise"': 0,
+    '"avgWklyHrs"': 0,
+    '"bloodPressureDiastolic"': 0,
+    '"bloodPressureSystolic"': 0,
+    '"bodyTemp"': 0,
+    '"firstName"': "",
+    '"genderID"': "",
+    '"height"': 0,
+    '"lastName"': "",
+    '"pulseRate"': 0,
+    '"respirationRate"': 0,
+    '"vacationBalance"': 0,
+    '"weight"': 0
+  });
+
 import NewEmpStyle from './NewEmpStyle.css';
 
 function NewEmployee() {
@@ -14,6 +38,40 @@ function NewEmployee() {
     const routeChangeReturnHome = () => {
         navigate('/');
     }
+    
+    const [input, updateFormData] = React.useState(initialFormData);
+
+            
+    const handleChange = (e) => {
+        updateFormData({
+            ...input,
+            [e.target.name]: e.target.value.trim()
+        });
+
+    };
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        console.log(input);
+        const response = await entities.employee.add({
+            "age": parseFloat(input['"age"']),
+            "avgWklyExercise": parseFloat(input['"avgWklyExercise"']),
+            "avgWklyHrs": parseFloat(input['"avgWklyHrs"']),
+            "bloodPressureDiastolic": parseFloat(input['"bloodPressureDiastolic"']),
+            "bloodPressureSystolic": parseFloat(input['"bloodPressureSystolic"']),
+            "bodyTemp": parseFloat(input['"bodyTemp"']),
+            "firstName": input['"firstName"'],
+            "genderID": input['"genderID"'],
+            "height": parseFloat(input['"height"']),
+            "lastName": input['"lastName"'],
+            "pulseRate": parseFloat(input['"pulseRate"']),
+            "respirationRate": parseFloat(input['"respirationRate"']),
+            "vacationBalance": parseFloat(input['"vacationBalance"']),
+            "weight": parseFloat(input['"weight"'])
+        });
+    };  
+
+
 
     return (
         <>
@@ -42,11 +100,11 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="First name"/>
+                                <input name='"firstName"' type="text" placeholder="First Name" onChange={handleChange}/>
                             </label>
-                
+
                             <label>
-                                <input type="text" placeholder="Last name"/>
+                                <input name='"lastName"' type="text" placeholder="Last Name" onChange={handleChange}/>
                             </label>
                         </form>
                     </Paper>
@@ -58,7 +116,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Age"/>
+                                <input name='"age"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                     </Paper>
@@ -70,7 +128,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Gender"/>
+                                <input name='"genderID"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                     </Paper>
@@ -83,7 +141,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Height"/>
+                                <input name='"height"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -97,7 +155,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Weight"/>
+                                <input name='"weight"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -111,7 +169,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Body Temperature"/>
+                                <input name='"bodyTemp"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -125,7 +183,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Pulse Rate"/>
+                                <input name='"pulseRate"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -139,7 +197,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Blood pressure"/>
+                                <input name='"bloodPressureDiastolic"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -153,7 +211,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Respiration Rate"/>
+                                <input name='"respirationRate"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -167,7 +225,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Avg hours of exercise per week"/>
+                                <input name='"avgWklyExercise"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -181,7 +239,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Vacation Balance"/>
+                                <input name='"vacationBalance"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -195,7 +253,7 @@ function NewEmployee() {
                         <br/>
                         <form>
                             <label>
-                                <input type="text" placeholder="Avg hours of work per week"/>
+                                <input name='"avgWklyHrs"' type="text" placeholder="Enter" onChange={handleChange}/>
                             </label>
                         </form>
                         
@@ -205,6 +263,7 @@ function NewEmployee() {
             </Box>
             <br/>
             <br/>
+            <button onClick={handleSubmit}>Submit</button>
             <br/>
             <br/>
             </MARGINS>
