@@ -21,7 +21,12 @@ export default function StatisticsReportModal() {
     <div>
       <Button
         variant="contained"
-        color="secondary"
+        style={{
+          borderRadius: 30,
+          backgroundColor: "#ffa55a",
+          padding: "10px 30px",
+          fontSize: "15px",
+        }}
         onClick={handleClickOpen}
         sx={{
           borderRadius: 30,
