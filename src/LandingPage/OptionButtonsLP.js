@@ -29,7 +29,7 @@ function OptionButtonsLP() {
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={12} lg={12} alignItems="center">
-                    <button className="button" role="button" 
+                    <button className="button2" 
                             onClick={routeChangeViewData}>
                                 <span class="text">View Employee Data</span>
                     </button>

@@ -16,7 +16,7 @@ function ViewData() {
   return (
     <>
       <STYLE_1>
-        <h1>Employee Data summary</h1>
+        <h1 style={{marginTop: '0px'}}>Employee Data summary</h1>
       </STYLE_1>
       <CssBaseline>
         <br />
@@ -44,7 +44,7 @@ function ViewData() {
 }
 
 const STYLE_1 = styled.div`
-  background-image: linear-gradient(144deg, #adffd0, #8afff7 50%, #a3d9ff);
+  background-image: linear-gradient(to right, #fff5c6 0%, #fd8552 100%);
   text-align: center;
   font-family: "Ubuntu", sans-serif;
 `;

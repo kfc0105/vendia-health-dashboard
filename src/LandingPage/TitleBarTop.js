@@ -5,7 +5,7 @@ import styled from 'styled-components';
 function TitleBarTop() {
     return (
         <STYLE_1>
-           <h1>Welcome to Vendia Health Dashboard</h1>
+           <h1 style={{marginTop: '0px'}}>Welcome to Vendia Health Dashboard</h1>
         </STYLE_1> 
     );
 };

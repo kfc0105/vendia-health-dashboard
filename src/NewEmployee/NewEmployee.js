@@ -74,7 +74,7 @@ function NewEmployee() {
     return (
         <>
         <CssBaseline>
-            <STYLE_TOP> <h1>Create New Employee</h1> </STYLE_TOP>
+            <STYLE_TOP> <h1 style={{marginTop: '0px'}}>Create New Employee</h1> </STYLE_TOP>
             <br/>
             <Button sx={{borderRadius: 50}} onClick={routeChangeReturnHome}> Return Home </Button>
         </CssBaseline>
@@ -285,7 +285,7 @@ const MARGINS = styledComp.div`
 `;
 
 const STYLE_TOP = styledComp.div`
-    background-image: linear-gradient(144deg,#adffd0, #8afff7 50%,#a3d9ff);
+    background-image: linear-gradient(to right, #c6feff 0%, #5288fd 100%);
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
 `;
