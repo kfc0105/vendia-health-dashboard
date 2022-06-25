@@ -64,6 +64,7 @@ function NewEmployee() {
   };
 
   const handleSubmit = async (e) => {
+    handleClickOpen();
     e.preventDefault();
     const response = await entities.employee.add({
       age: parseFloat(input['"age"']),
@@ -81,8 +82,6 @@ function NewEmployee() {
       vacationBalance: parseFloat(input['"vacationBalance"']),
       weight: parseFloat(input['"weight"']),
     });
-
-    handleClickOpen();
   };
 
   return (
