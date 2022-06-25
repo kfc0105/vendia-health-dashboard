@@ -92,7 +92,17 @@ function NewEmployee() {
           <h1 style={{ marginTop: "0px" }}>Create New Employee</h1>{" "}
         </STYLE_TOP>
         <br />
-        <Button sx={{ borderRadius: 50 }} onClick={routeChangeReturnHome}>
+        <Button
+          variant="contained"
+          style={{
+            borderRadius: 30,
+            backgroundColor: "#6a9dff",
+            padding: "10px 30px",
+            fontSize: "15px",
+          }}
+          sx={{ borderRadius: 30, display: "flex" }}
+          onClick={routeChangeReturnHome}
+        >
           {" "}
           Return Home{" "}
         </Button>
@@ -115,7 +125,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4fad4",
+                  backgroundColor: "#c6feff",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -148,7 +158,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4eafa",
+                  backgroundColor: "#70a6fd",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -172,7 +182,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4fad4",
+                  backgroundColor: "#c6feff",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -196,7 +206,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4eafa",
+                  backgroundColor: "#70a6fd",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -220,7 +230,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4fad4",
+                  backgroundColor: "#c6feff",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -244,7 +254,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4eafa",
+                  backgroundColor: "#70a6fd",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -268,7 +278,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4fad4",
+                  backgroundColor: "#c6feff",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -292,7 +302,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4eafa",
+                  backgroundColor: "#70a6fd",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -324,7 +334,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4fad4",
+                  backgroundColor: "#c6feff",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -348,7 +358,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4eafa",
+                  backgroundColor: "#70a6fd",
                   borderRadius: 10,
                   fontSize: 1,
                 }}
@@ -373,7 +383,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4fad4",
+                  backgroundColor: "#c6feff",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -397,7 +407,7 @@ function NewEmployee() {
                 sx={{
                   height: 300,
                   width: 365,
-                  backgroundColor: "#b4eafa",
+                  backgroundColor: "#70a6fd",
                   borderRadius: 10,
                 }}
                 elevation={6}
@@ -422,7 +432,12 @@ function NewEmployee() {
         <br />
         <Button
           variant="contained"
-          color="secondary"
+          style={{
+            borderRadius: 30,
+            backgroundColor: "#6a9dff",
+            padding: "10px 30px",
+            fontSize: "15px",
+          }}
           onClick={handleSubmit}
           sx={{
             borderRadius: 30,

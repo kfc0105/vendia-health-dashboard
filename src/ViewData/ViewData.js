@@ -16,13 +16,18 @@ function ViewData() {
   return (
     <>
       <STYLE_1>
-        <h1 style={{marginTop: '0px'}}>Employee Data summary</h1>
+        <h1 style={{ marginTop: "0px" }}>Employee Data summary</h1>
       </STYLE_1>
       <CssBaseline>
         <br />
         <Button
           variant="contained"
-          color="secondary"
+          style={{
+            borderRadius: 30,
+            backgroundColor: "#ffa55a",
+            padding: "10px 30px",
+            fontSize: "15px",
+          }}
           sx={{
             borderRadius: 30,
             display: "flex",
