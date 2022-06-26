@@ -14,6 +14,8 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 import { useAsync } from "react-async";
 
 const { entities } = client;
@@ -35,6 +37,7 @@ const initialFormData = Object({
   '"vacationBalance"': 0,
   '"weight"': 0,
 });
+
 
 function NewEmployee() {
   const [open, setOpen] = React.useState(false);
@@ -66,6 +69,8 @@ function NewEmployee() {
   const handleSubmit = async (e) => {
     handleClickOpen();
     e.preventDefault();
+    
+    
     const response = await entities.employee.add({
       age: parseFloat(input['"age"']),
       avgWklyExercise: parseFloat(input['"avgWklyExercise"']),
@@ -82,6 +87,7 @@ function NewEmployee() {
       vacationBalance: parseFloat(input['"vacationBalance"']),
       weight: parseFloat(input['"weight"']),
     });
+    
   };
 
   return (
@@ -449,20 +455,12 @@ function NewEmployee() {
         </Button>
         <Dialog
           open={open}
-          onClose={handleClose}
           aria-labelledby="statistics-report-title"
           aria-describedby="statistics-report"
         >
-          <DialogContent>
-            <DialogContentText id="report">
-              <b>SUCCESS! You will now be redirected to the main page</b>
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} autoFocus>
-              Close
-            </Button>
-          </DialogActions>
+          <Stack sx={{ width: '100%' }} spacing={2}>
+            <Alert onClose={handleClose}>SUCCESS! You will now be redirected to the main page</Alert>
+          </Stack>
         </Dialog>
         <br />
         <br />
