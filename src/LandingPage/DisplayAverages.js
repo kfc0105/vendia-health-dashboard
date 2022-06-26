@@ -17,54 +17,49 @@ function DisplayAverages() {
                 align="center"
                 >
                     <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <Paper sx={{ height: 140, width: 290, backgroundColor: '#c3dfe6', borderRadius: 10}}
+                    <Paper sx={{ height: 305, width: 220, backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)', borderRadius: 5}}
                            elevation={6}>
                         <STYLE> Avg: ____ </STYLE>
                         <br/>
                     </Paper>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3} >
-                    <Paper sx={{ height: 140, width: 290, backgroundColor: '#a5cad4', borderRadius: 10}}
+                    <Paper sx={{ height: 305, width: 220, backgroundImage: 'linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)', borderRadius: 5}}
                            elevation={6}>
                         <STYLE> Avg: ____ </STYLE>
                         <br/>
                     </Paper>
                     </Grid>
                     <Grid item xs={12}  sm={6} md={4} lg={3} >
-                    <Paper sx={{ height: 140, width: 290, backgroundColor: '#a7c4cc', borderRadius: 10}}
+                    <Paper sx={{ height: 305, width: 220, backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)', borderRadius: 5}}
+                           elevation={6}>
+                        <STYLE> Avg: ____ </STYLE>
+                        <br/>
+                    </Paper>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Paper sx={{ height: 305, width: 220, backgroundImage: 'linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)', borderRadius: 5}}
+                           elevation={6}>
+                        <STYLE> Avg: ____ </STYLE>
+                        <br/>
+                    </Paper>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={3} >
+                    <Paper sx={{ height: 305, width: 220, backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)', borderRadius: 5}}
                            elevation={6}>
                         <STYLE> Avg: ____ </STYLE>
                         <br/>
                     </Paper>
                     </Grid>
                     <Grid item xs={12}  sm={6} md={4} lg={3} >
-                    <Paper sx={{ height: 140, width: 290, backgroundColor: '#c5e1e8', borderRadius: 10}}
+                    <Paper sx={{ height: 305, width: 220, backgroundImage: 'linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)', borderRadius: 5}}
                            elevation={6}>
                         <STYLE> Avg: ____ </STYLE>
                         <br/>
                     </Paper>
                     </Grid>
-                    <Grid item xs={12}  sm={6} md={4} lg={3} >
-                    <Paper sx={{ height: 140, width: 290, backgroundColor: '#b5dee8', borderRadius: 10}}
-                           elevation={6}>
-                        <STYLE> Avg: ____ </STYLE>
-                        <br/>
-                    </Paper>
-                    </Grid>
-                    <Grid item xs={12}  sm={6} md={4} lg={3} >
-                    <Paper sx={{ height: 140, width: 290, backgroundColor: '#a4d3de', borderRadius: 10}}
-                           elevation={6}>
-                        <STYLE> Avg: ____ </STYLE>
-                        <br/>
-                    </Paper>
-                    </Grid>
-                    <Grid item xs={12}  sm={6} md={4} lg={3} >
-                    <Paper sx={{ height: 140, width: 290, backgroundColor: '#aee6f2', borderRadius: 10}}
-                           elevation={6}>
-                        <STYLE> Avg: ____ </STYLE>
-                        <br/>
-                    </Paper>
-                    </Grid>
+                    
+                    
                 </Grid>
             </Box>
         </CssBaseline>
@@ -78,6 +73,8 @@ const STYLE = styled.div`
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 `;
+
+
 
 
 
