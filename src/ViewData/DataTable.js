@@ -1,17 +1,13 @@
 import React from 'react';
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { getAllEmplQuery, getEmplQuery } from "../vendia/queries";
 import { client } from "../App";
 import { useAsync } from "react-async";
 
+const { entities } = client;
+
 async function getAllEmplData() {
-  const response = await client.request(getAllEmplQuery);
-  // if (!response.ok) throw new Error(response.statusText);
-
-  const employees = response?.list_EmployeeItems?._EmployeeItems;
-  console.log(employees);
-
-  return employees;
+  const response = await entities.employee.list();
+  return response.items;
 }
 
 function DataTable() {
