@@ -1,10 +1,12 @@
-import { CssBaseline, Button } from "@mui/material";
+import { CssBaseline, Button, Grid } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SendIcon from "@mui/icons-material/Send";
 import DataTable from "./DataTable";
 import StatisticsReportModal from "../ViewData/StatisticsReportModal";
+
+
 
 function ViewData() {
   let navigate = useNavigate();
@@ -13,37 +15,50 @@ function ViewData() {
     navigate("/");
   };
 
+  const routeChangeViewData= () => {
+    navigate("/addData");
+  };
+
   return (
     <>
+   
       <STYLE_1>
         <h1 style={{ marginTop: "0px" }}>Employee Data summary</h1>
       </STYLE_1>
       <CssBaseline>
         <br />
-        <Button
-          variant="contained"
-          style={{
-            borderRadius: 30,
-            backgroundColor: "#ffa55a",
-            padding: "10px 30px",
-            fontSize: "15px",
-          }}
-          sx={{
-            borderRadius: 30,
-            display: "flex",
-          }}
-          onClick={routeChangeReturnHome}
-        >
-          {" "}
-          Return Home{" "}
-        </Button>
+        <Grid
+            container
+            spacing={2}
+            direction="row"
+            justifyContent="center"
+            align="center"
+          >
+            
+              <Grid item xs={12} md={3} lg={3} >
+                    <button className="buttonNE" onClick={routeChangeReturnHome} >
+                            
+                                <span class="text">Return Home</span>
+                    </button>
+              </Grid>
+              <Grid item xs={12} md={6} lg={6}>
+                  <StatisticsReportModal />
+              </Grid>
+              <Grid item xs={12} md={3} lg={3}>
+              <button className="buttonNE3" onClick={routeChangeViewData}>
+                            
+                        <span class="text">Create Employee</span>
+                    </button>
+              </Grid>
+            </Grid>
         <br />
-        <StatisticsReportModal />
+        
         <br />
       </CssBaseline>
       <div style={{ height: 400, width: "100%" }}>
         <DataTable />
       </div>
+      
     </>
   );
 }
@@ -53,4 +68,6 @@ const STYLE_1 = styled.div`
   text-align: center;
   font-family: "Ubuntu", sans-serif;
 `;
+
+
 export default ViewData;

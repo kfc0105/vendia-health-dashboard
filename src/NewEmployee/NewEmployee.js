@@ -15,6 +15,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useAsync } from "react-async";
+import img from '../cool-bg2.png'
+import ButtonStyle from './ButtonStyle.css'
 
 const { entities } = client;
 
@@ -54,6 +56,10 @@ function NewEmployee() {
     navigate("/");
   };
 
+  const routeChangeViewData = () => {
+    navigate("/viewData");
+  };
+
   const [input, updateFormData] = React.useState(initialFormData);
 
   const handleChange = (e) => {
@@ -86,31 +92,48 @@ function NewEmployee() {
 
   return (
     <>
+    <BACKGROUND>
       <CssBaseline>
         <STYLE_TOP>
-          {" "}
-          <h1 style={{ marginTop: "0px" }}>Create New Employee</h1>{" "}
+          
+          <div style={{paddingTop: '1.5rem', paddingBottom: '1.5rem', verticalAlign: 'middle'}}>
+          <h1 style={{ marginTop: "0px", marginBottom: '0px' }}>
+            Create New Employee
+          </h1>
+
+          </div>    
         </STYLE_TOP>
         <br />
-        <Button
-          variant="contained"
-          style={{
-            borderRadius: 30,
-            backgroundColor: "#6a9dff",
-            padding: "10px 30px",
-            fontSize: "15px",
-          }}
-          sx={{ borderRadius: 30, display: "flex" }}
-          onClick={routeChangeReturnHome}
-        >
-          {" "}
-          Return Home{" "}
-        </Button>
+        
+        <Grid
+            container
+            spacing={5}
+            direction="row"
+            justifyContent="center"
+            align="center"
+          >
+            
+              <Grid item xs={12} md={6} lg={6} >
+                    <button className="buttonNE" onClick={routeChangeReturnHome} >
+                            
+                                <span class="text">Return Home</span>
+                    </button>
+              </Grid>
+              <Grid item xs={12} md={6} lg={6}>
+              <button className="buttonNE2" onClick={routeChangeViewData}>
+                            
+                        <span class="text">Employee Data</span>
+                    </button>
+              </Grid>
+            </Grid>
+
+        
+        
       </CssBaseline>
       <br />
       <br />
       <br />
-      <br />
+      
       <MARGINS>
         <Box sx={{ flexGrow: 0 }}>
           <Grid
@@ -120,6 +143,7 @@ function NewEmployee() {
             justifyContent="center"
             align="center"
           >
+            
             <Grid item xs={12} md={6} lg={4}>
               <Paper
                 sx={{
@@ -364,7 +388,7 @@ function NewEmployee() {
                 }}
                 elevation={6}
               >
-                <STYLE> Avg hours of exercise per week </STYLE>
+                <STYLE_SM2> Avg hours of exercise per week </STYLE_SM2>
                 <br />
                 <form>
                   <label>
@@ -412,8 +436,9 @@ function NewEmployee() {
                 }}
                 elevation={6}
               >
-                <STYLE> Avg hours of work per week </STYLE>
+                <STYLE_SM> Avg hours of work per week </STYLE_SM>
                 <br />
+                
                 <form>
                   <label>
                     <input
@@ -467,6 +492,7 @@ function NewEmployee() {
         <br />
         <br />
       </MARGINS>
+      </BACKGROUND>
     </>
   );
 }
@@ -476,6 +502,22 @@ const STYLE = styledComp.div`
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.5rem;
+`;
+
+const STYLE_SM = styledComp.div`
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+`;
+
+const STYLE_SM2 = styledComp.div`
+    padding-top: 1rem;
+    padding-bottom: 1.9rem;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
 `;
 
 const MARGINS = styledComp.div`
@@ -488,5 +530,15 @@ const STYLE_TOP = styledComp.div`
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
 `;
+
+const BACKGROUND = styledComp.div`
+  background-image: url(${img});
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-bottom: 0px;
+
+`
 
 export default NewEmployee;
