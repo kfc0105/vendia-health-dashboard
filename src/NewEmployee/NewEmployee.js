@@ -92,6 +92,96 @@ function NewEmployee() {
       respirationRate: parseFloat(input['"respirationRate"']),
       vacationBalance: parseFloat(input['"vacationBalance"']),
       weight: parseFloat(input['"weight"']),
+    },
+    {
+      aclInput: {
+        acl: [ 
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "age",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "genderID",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "height",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "weight",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "bodyTemp",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "pulseRate",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "bloodPressureSystolic",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "bloodPressureDiastolic",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "respirationRate",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "avgWklyExercise",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "vacationBalance",
+            operations: ["READ"]
+          },
+          {
+            principal: {
+              nodes: ["*"]
+            },
+            path: "avgWklyHrs",
+            operations: ["READ"]
+          }
+        ]
+      }
     });
     
   };
