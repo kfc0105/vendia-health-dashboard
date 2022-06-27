@@ -23,7 +23,7 @@ function ViewData() {
     <>
    
       <STYLE_1>
-        <h1 style={{ marginTop: "0px" }}>Employee Data summary</h1>
+        <h1 style={{ marginTop: "0px", paddingBottom: '1.5rem', paddingTop: '1.5rem' }}>Employee Data summary</h1>
       </STYLE_1>
       <CssBaseline>
         <br />
