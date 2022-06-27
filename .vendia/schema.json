@@ -2,6 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Employee Health",
   "description": "Employee health uni schema",
+  "x-vendia-acls": {
+    "EmployeeAcl": {
+      "type": "Employee"
+    }
+  },
   "type": "object",
   "properties": {
     "Employee": {
@@ -27,7 +32,7 @@
             "type": "string"
           },
           "height": {
-            "description": "Height in feet",
+            "description": "Height in inches",
             "type": "number"
           },
           "weight": {

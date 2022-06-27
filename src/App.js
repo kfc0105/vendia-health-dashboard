@@ -2,12 +2,10 @@ import LandingPage from './LandingPage/LandingPage.js'
 
 import { createVendiaClient } from '@vendia/client';
 
-const myApiKey = `2edQCbZNsmLrogFXEsPPdwcUeGxhJzicaeyjbThNCYMV`;
-
 const client = createVendiaClient({
-  apiUrl: `https://aqzfdiwh32.execute-api.us-west-2.amazonaws.com/graphql/`,
-  websocketUrl: `wss://96eoo7yd7g.execute-api.us-west-2.amazonaws.com/graphql`,
-  apiKey: myApiKey,
+  apiUrl: `https://tzuz85d56l.execute-api.us-west-2.amazonaws.com/graphql/`,
+  websocketUrl: `wss://7etxn8y2fi.execute-api.us-west-2.amazonaws.com/graphql`,
+  apiKey: `D84ei2uR57g3r9rvh5RNbkNhp3qfonFkPTLadyoVMQHM`,
 });
 
 export default function App() {

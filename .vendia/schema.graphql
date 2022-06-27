@@ -251,6 +251,7 @@ type Self_Employee {
   respirationRate: Float
   vacationBalance: Float
   weight: Float
+  _acl: [Vendia_Acl!]
   _owner: String
 }
 
@@ -270,6 +271,7 @@ type Self_Employee_Partial_ {
   respirationRate: Float
   vacationBalance: Float
   weight: Float
+  _acl: [Vendia_Acl!]
   _owner: String
 }
 
@@ -282,7 +284,7 @@ type Self_Employee_Result_ {
 
 type Self_Employee_Transaction_Result_ {
   transaction: Vendia_Transaction!
-  result: Self_Employee
+  result: Self_Employee_PartialUnion_
 }
 
 type Self_Employee_Delete_Transaction_Result_ {
@@ -290,7 +292,7 @@ type Self_Employee_Delete_Transaction_Result_ {
 }
 
 type Self_Employee_Connection_ {
-  _EmployeeItems: [Self_Employee]
+  _EmployeeItems: [Self_Employee_PartialUnion_]
   nextToken: String
 }
 
@@ -2497,7 +2499,7 @@ input Vendia_Contract_InvokeInput_ {
 }
 
 type Query {
-  get_Employee(id: ID!, version: Int): Self_Employee
+  get_Employee(id: ID!, version: Int): Self_Employee_PartialUnion_
   list_EmployeeItems(filter: Self_Employee_FilterInput_, limit: Int, nextToken: String): Self_Employee_Connection_
   list_EmployeeVersions(id: ID!, limit: Int, nextToken: String): Vendia_Version_Connection_
   getVendia_Block(id: ID!): Vendia_Block
@@ -2525,12 +2527,12 @@ type Query {
 }
 
 type Mutation {
-  add_Employee_async(input: Self_Employee_Input_!): Vendia_Transaction_Result_
-  add_Employee(input: Self_Employee_Input_!, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
-  put_Employee_async(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_): Vendia_Transaction_Result_
-  put_Employee(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
-  update_Employee_async(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_): Vendia_Transaction_Result_
-  update_Employee(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
+  add_Employee_async(input: Self_Employee_Input_!, aclInput: Vendia_Acls_Input_): Vendia_Transaction_Result_
+  add_Employee(input: Self_Employee_Input_!, aclInput: Vendia_Acls_Input_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
+  put_Employee_async(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_!): Vendia_Transaction_Result_
+  put_Employee(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_!, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
+  update_Employee_async(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_): Vendia_Transaction_Result_
+  update_Employee(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
   remove_Employee_async(id: ID!, condition: Self_Employee_ConditionInput_): Vendia_Transaction_Result_
   remove_Employee(id: ID!, condition: Self_Employee_ConditionInput_, syncMode: Vendia_SyncMode!): Self_Employee_Delete_Transaction_Result_
   addVendia_File_async(input: Vendia_File_Input_!): Vendia_Transaction_Result_
