@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import TitleBarTop from './TitleBarTop.js';
 import OptionButtonsLP from './OptionButtonsLP.js'
 import DisplayAverages from './DisplayAverages.js';
-import img from './cool-bg2.png';
+import img from '../cool-bg2.png';
+import AveragesTitle from './AveragesTitle.js'
 
 function LandingPage() {
     return (
@@ -16,6 +17,7 @@ function LandingPage() {
             <OptionButtonsLP/>
             <br/>
             <br/>
+            <AveragesTitle/>
             <br/>
             <DisplayAverages/>
             <br/>

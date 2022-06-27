@@ -15,6 +15,8 @@ function TitleBarTop() {
     );
 };
 
+//linear-gradient(270deg, rgba(255,192,236,0.3211485277704832) 0%, rgba(128,120,255,1) 100%)
+
 const STYLE_1 = styled.div`
     background-image: linear-gradient(144deg,#97ffda, #6d7eff 50%, #97ffda);
     text-align: center;
