@@ -17,8 +17,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import { useAsync } from "react-async";
-import img from '../new_bg.svg'
+import img from '../bg_4_ne.svg'
 import ButtonStyle from './ButtonStyle.css'
+import EmployeeCards from './EmployeeCards.css'
 
 const { entities } = client;
 
@@ -241,15 +242,7 @@ function NewEmployee() {
           >
             
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#c6feff",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+              <div class='cardEmp'>
                 <STYLE> Name </STYLE>
                 <br />
                 <form>
@@ -271,18 +264,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#70a6fd",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE> Age </STYLE>
                 <br />
                 <form>
@@ -295,42 +280,24 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#c6feff",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
-                <STYLE> Gender </STYLE>
+            <div class='cardEmp'>
+                <STYLE_SL> Gender </STYLE_SL>
                 <br />
-                <form>
-                  <label>
-                    <input
-                      name='"genderID"'
-                      type="text"
-                      placeholder="Enter"
-                      onChange={handleChange}
-                    />
-                  </label>
-                </form>
-              </Paper>
+                <select name="gender" placeholder="Enter" onChange={handleChange}>
+                  <option value="" disabled selected style={{color: '#888888'}}>Select Gender</option>
+                  <option value="1">1</option>  
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#70a6fd",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE> Height </STYLE>
                 <br />
                 <form>
@@ -343,18 +310,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#c6feff",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE> Weight </STYLE>
                 <br />
                 <form>
@@ -367,18 +326,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#70a6fd",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE> Body Temperature </STYLE>
                 <br />
                 <form>
@@ -391,18 +342,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#c6feff",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE> Pulse Rate </STYLE>
                 <br />
                 <form>
@@ -415,18 +358,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#70a6fd",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE> Blood pressure </STYLE>
                 <br />
                 <form>
@@ -447,18 +382,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#c6feff",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+              <div class='cardEmp'>
                 <STYLE> Respiration rate </STYLE>
                 <br />
                 <form>
@@ -471,19 +398,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#70a6fd",
-                  borderRadius: 10,
-                  fontSize: 1,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE_SM2> Avg hours of exercise per week </STYLE_SM2>
                 <br />
                 <form>
@@ -496,18 +414,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#c6feff",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE> Vacation Balance </STYLE>
                 <br />
                 <form>
@@ -520,18 +430,10 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Paper
-                sx={{
-                  height: 300,
-                  width: 365,
-                  backgroundColor: "#70a6fd",
-                  borderRadius: 10,
-                }}
-                elevation={6}
-              >
+            <div class='cardEmp'>
                 <STYLE_SM> Avg hours of work per week </STYLE_SM>
                 <br />
                 
@@ -545,7 +447,7 @@ function NewEmployee() {
                     />
                   </label>
                 </form>
-              </Paper>
+                </div>
             </Grid>
           </Grid>
         </Box>
@@ -603,6 +505,15 @@ const STYLE_SM = styledComp.div`
 const STYLE_SM2 = styledComp.div`
     padding-top: 1rem;
     padding-bottom: 1.9rem;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+`;
+
+
+const STYLE_SL = styledComp.div`
+    padding-top: 1rem;
+    padding-bottom: 1.31rem;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.2rem;
