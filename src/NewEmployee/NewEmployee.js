@@ -17,7 +17,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import { useAsync } from "react-async";
-import img from '../cool-bg2.png'
+import img from '../new_bg.svg'
 import ButtonStyle from './ButtonStyle.css'
 
 const { entities } = client;

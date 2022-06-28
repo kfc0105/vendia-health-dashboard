@@ -1,0 +1,10 @@
+.card {
+    width: 230px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    height: 300px;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+    background-color: rgba(230, 230, 230, 0.25);
+    
+    
+}
