@@ -1,17 +1,15 @@
-import LandingPage from './LandingPage/LandingPage.js'
+import LandingPage from "./LandingPage/LandingPage.js";
 
-import { createVendiaClient } from '@vendia/client';
+import { createVendiaClient } from "@vendia/client";
 
 const client = createVendiaClient({
-  apiUrl: `https://tzuz85d56l.execute-api.us-west-2.amazonaws.com/graphql/`,
-  websocketUrl: `wss://7etxn8y2fi.execute-api.us-west-2.amazonaws.com/graphql`,
-  apiKey: `6a3WUNEFw5uC26gEhW6JFxpqvvyxZXWPHJZozA8bnZAb`,
+  apiUrl: `https://qex2wmt1i8.execute-api.us-west-2.amazonaws.com/graphql/`,
+  websocketUrl: `wss://kr771grhlf.execute-api.us-west-2.amazonaws.com/graphql`,
+  apiKey: `EzN78KA8TercXBSS9UFyrh8C7gfMfzsoyf2mXM5Faw3B`,
 });
 
 export default function App() {
-  return (
-    <LandingPage/>
-  );
-};
+  return <LandingPage />;
+}
 
 export { client };
