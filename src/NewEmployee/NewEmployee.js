@@ -288,11 +288,11 @@ function NewEmployee() {
                 <br />
                 <select name="gender" placeholder="Enter" onChange={handleChange}>
                   <option value="" disabled selected style={{color: '#888888'}}>Select Gender</option>
-                  <option value="1">1</option>  
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="m">M</option>  
+                  <option value="f">F</option>
+                  <option value="t">T</option>
+                  <option value="n">N</option>
+                  <option value="np">NP</option>
                 </select>
                 </div>
             </Grid>
