@@ -8,6 +8,7 @@ import { getAllEmplQuery } from "../vendia/queries";
 import { client } from "../App";
 import { useAsync } from "react-async";
 import * as Avg from "../calculations/AverageFunctions";
+import CardStyle from './CardStyle.css'
 
 async function getAllEmplData() {
   const response = await client.request(getAllEmplQuery);
@@ -31,148 +32,67 @@ function DisplayAverages() {
             align="center"
           >
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE> Age: </STYLE>
                 <div>{Avg.getAverageAge(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE> Height: </STYLE>
                 <div>{Avg.getAverageHeight(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE> Weight: </STYLE>
                 <div>{Avg.getAverageWeight(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE> Body Temperature: </STYLE>
                 <div>{Avg.getAverageBodyTemp(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE> Pulse Rate: </STYLE>
                 <div>{Avg.getAveragePulseRate(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE> Blood Pressure (D/S): </STYLE>
                 <div>{Avg.getAverageBloodPressure(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE> Respiration Rate </STYLE>
                 <div>{Avg.getAverageRespirationRate(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE_SM> Hours of exercise per week: </STYLE_SM>
                 <div>{Avg.getAverageWklyExercise(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Paper
-                sx={{
-                  height: 305,
-                  width: 220,
-                  backgroundImage:
-                    "linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-                  borderRadius: 5,
-                }}
-                elevation={6}
-              >
+              <div class='card'>
                 <STYLE_SM> Hours of work per week: </STYLE_SM>
                 <div>{Avg.getAverageWklyHrs(data)}</div>
                 <br />
-              </Paper>
+              </div>
             </Grid>
           </Grid>
         </Box>
