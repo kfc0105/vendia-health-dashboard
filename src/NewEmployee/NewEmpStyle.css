@@ -8,6 +8,26 @@ form {
   width: 320px;
   margin: 0 auto;
 }
+select { 
+  padding: 16px;
+  width: 286px;
+  
+  
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #ebecf0;
+}
+
+
+
 button, input {
   border: 0;
   outline: 0;
