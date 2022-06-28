@@ -76,7 +76,7 @@ function NewEmployee() {
   const handleSubmit = async (e) => {
     handleClickOpen();
     e.preventDefault();
-    
+    console.log(input)
     
     const response = await entities.employee.add({
       age: parseFloat(input['"age"']),
@@ -94,6 +94,7 @@ function NewEmployee() {
       vacationBalance: parseFloat(input['"vacationBalance"']),
       weight: parseFloat(input['"weight"']),
     },
+    
     {
       aclInput: {
         acl: [ 
@@ -286,7 +287,7 @@ function NewEmployee() {
             <div class='cardEmp'>
                 <STYLE_SL> Gender </STYLE_SL>
                 <br />
-                <select name="gender" placeholder="Enter" onChange={handleChange}>
+                <select name='"genderID"' placeholder="Enter" onChange={handleChange}>
                   <option value="" disabled selected style={{color: '#888888'}}>Select Gender</option>
                   <option value="m">M</option>  
                   <option value="f">F</option>
