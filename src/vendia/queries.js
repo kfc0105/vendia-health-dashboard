@@ -22,25 +22,27 @@ const getEmplQuery = `
 `;
 
 // Requesting data for all employees
-const getAllEmplQuery = `
+const getAllEmplQuery = ` 
   query getAllEmplData {
     list_EmployeeItems {
       _EmployeeItems {
-        _id
-        firstName
-        lastName
-        age
-        genderID
-        height
-        weight
-        bodyTemp
-        pulseRate
-        bloodPressureSystolic
-        bloodPressureDiastolic
-        respirationRate
-        avgWklyExercise
-        vacationBalance
-        avgWklyHrs
+        ... on Self_Employee {
+          _id
+          firstName
+          lastName
+          age
+          genderID
+          height
+          weight
+          bodyTemp
+          pulseRate
+          bloodPressureSystolic
+          bloodPressureDiastolic
+          respirationRate
+          avgWklyExercise
+          vacationBalance
+          avgWklyHrs
+        }
       }
     }
   }

@@ -1,17 +1,16 @@
-import React from 'react';
+import React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { client } from "../App";
 import { useAsync } from "react-async";
 
 const { entities } = client;
 
-async function getAllEmplData() {
+export async function getAllEmplData() {
   const response = await entities.employee.list();
   return response.items;
 }
 
 function DataTable() {
-  
   const columns = [
     { headerName: "First Name", field: "firstName", width: 100 },
     { headerName: "Last Name", field: "lastName", width: 100 },
@@ -32,24 +31,30 @@ function DataTable() {
     { headerName: "Vacation Balance", field: "vacationBalance", width: 130 },
     { headerName: "Avg Work Week", field: "avgWklyHrs", width: 120 },
   ];
-  
+
   const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
-  if (isPending) return "Loading..."
+  if (isPending) return "Loading...";
   if (data)
     return (
-      <div style={{ height: 400, width: '100%' }}>
+      <div style={{ height: 400, width: "100%" }}>
         <DataGrid
-        getRowId={(row) => row._id}
-        autoHeight
-        rows={data}
-        columns={columns}
-        pageSize={15}
-        checkboxSelection
-        components={{ Toolbar: GridToolbar }}
-        rowsPerPageOptions={[15, 30, 60]}
+          getRowId={(row) => row._id}
+          autoHeight
+          rows={data}
+          columns={columns}
+          pageSize={15}
+          checkboxSelection
+          onSelectionModelChange={(ids) => {
+            const selectedIDs = new Set(ids);
+            const selectedRowData = data.filter((row) =>
+              selectedIDs.has(row._id.toString())
+            );
+            console.log(selectedRowData);
+          }}
+          components={{ Toolbar: GridToolbar }}
+          rowsPerPageOptions={[15, 30, 60]}
         />
       </div>
-      
     );
 }
 
