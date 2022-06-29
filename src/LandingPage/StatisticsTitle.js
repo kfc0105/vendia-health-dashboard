@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-function AveragesTitle() {
+function StatisticsTitle() {
     return (
         <STYLE_1>
             
-           <h1 style={{marginTop: '0px', color: 'white', fontSize: '1.3rem'}}>Employee Averages:</h1>
+           <h1 style={{marginTop: '0px', color: 'white', fontSize: '1.3rem'}}>Employee Statistics:</h1>
         </STYLE_1> 
     );
 };
@@ -23,4 +23,4 @@ const STYLE_1 = styled.div`
 `
 
 
-export default AveragesTitle;
+export default StatisticsTitle;

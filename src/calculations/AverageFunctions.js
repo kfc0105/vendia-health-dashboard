@@ -54,8 +54,28 @@ export function getAverageBloodPressure(_data) {
     avgSystolic /= _data.length;
     avgDiastolic /= _data.length;
 
-    let avgBloodPressure = Math.round(avgSystolic) + " / " + Math.round(avgDiastolic);
+    let avgBloodPressure = Math.round(avgSystolic) + "/" + Math.round(avgDiastolic);
     return avgBloodPressure;
+}
+
+export function getAverageSysBloodPressure(_data) {
+    let avgSystolic = 0;
+    for (let i = 0; i < _data.length; i++) {
+        avgSystolic += _data[i].bloodPressureSystolic;
+    }
+    avgSystolic /= _data.length;
+
+    return avgSystolic;
+}
+
+export function getAverageDiasBloodPressure(_data) {
+    let avgDiastolic = 0;
+    for (let i = 0; i < _data.length; i++) {
+        avgDiastolic += _data[i].bloodPressureDiastolic;
+    }
+    avgDiastolic /= _data.length;
+
+    return avgDiastolic;
 }
 
 export function getAverageRespirationRate(_data) {
@@ -80,6 +100,15 @@ export function getAverageWklyHrs(_data) {
     let avg = 0;
     for (let i = 0; i < _data.length; i++) {
         avg += _data[i].avgWklyHrs;
+    }
+    avg /= _data.length;
+    return avg;
+}
+
+export function getAverageVacationBalance(_data) {
+    let avg = 0;
+    for (let i = 0; i < _data.length; i++) {
+        avg += _data[i].vacationBalance;
     }
     avg /= _data.length;
     return avg;
