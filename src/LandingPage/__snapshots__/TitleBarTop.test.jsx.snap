@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title appears 1`] = `
+<div
+  className="sc-bczRLJ eJCTEJ"
+>
+  <img
+    alt="website logo"
+    src="white.svg"
+    style={
+      Object {
+        "height": 65,
+        "width": 199,
+      }
+    }
+  />
+  <h1
+    style={
+      Object {
+        "color": "white",
+        "fontSize": "1.5rem",
+        "marginTop": "0px",
+      }
+    }
+  >
+    Health Dashboard
+  </h1>
+</div>
+`;
