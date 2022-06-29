@@ -3,9 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import TitleBarTop from './TitleBarTop.js';
 import OptionButtonsLP from './OptionButtonsLP.js'
-import DisplayAverages from './DisplayAverages.js';
+import DisplayStatistics from './DisplayStatistics.js';
 import img from '../new_bg.svg';
-import AveragesTitle from './AveragesTitle.js'
+import StatisticsTitle from './StatisticsTitle.js'
 
 function LandingPage() {
     return (
@@ -17,9 +17,9 @@ function LandingPage() {
             <OptionButtonsLP/>
             <br/>
             <br/>
-            <AveragesTitle/>
+            <StatisticsTitle/>
             <br/>
-            <DisplayAverages/>
+            <DisplayStatistics/>
             <br/>
             <br/>
             <br/>
