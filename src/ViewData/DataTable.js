@@ -2,6 +2,8 @@ import React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { client } from "../App";
 import { useAsync } from "react-async";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box'
 
 const { entities } = client;
 
@@ -33,7 +35,12 @@ function DataTable() {
   ];
 
   const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
-  if (isPending) return "Loading...";
+  //const load = true;
+  if (isPending) return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ff970f' }}>
+              <CircularProgress color="inherit" thickness={7}  />
+            </Box>
+        );
   if (data)
     return (
       <div style={{ height: 400, width: "100%" }}>
