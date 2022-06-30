@@ -5,8 +5,16 @@ import { useNavigate } from "react-router-dom";
 import SendIcon from "@mui/icons-material/Send";
 import DataTable from "./DataTable";
 import StatisticsReportModal from "../ViewData/StatisticsReportModal";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { client } from "../App";
+import { useAsync } from "react-async";
 
+const { entities } = client;
 
+export async function getAllEmplData() {
+  const response = await entities.employee.list();
+  return response.items;
+}
 
 function ViewData() {
   let navigate = useNavigate();
@@ -15,52 +23,97 @@ function ViewData() {
     navigate("/");
   };
 
-  const routeChangeViewData= () => {
+  const routeChangeViewData = () => {
     navigate("/addData");
   };
 
-  return (
-    <>
-   
-      <STYLE_1>
-        <h1 style={{ marginTop: "0px", paddingBottom: '1.5rem', paddingTop: '1.5rem' }}>Employee Data summary</h1>
-      </STYLE_1>
-      <CssBaseline>
-        <br />
-        <Grid
+  const columns = [
+    { headerName: "First Name", field: "firstName", width: 100 },
+    { headerName: "Last Name", field: "lastName", width: 100 },
+    { headerName: "Age", field: "age", width: 70 },
+    { headerName: "Gender", field: "genderID", width: 70 },
+    { headerName: "Height", field: "height", width: 70 },
+    { headerName: "Weight", field: "weight", width: 70 },
+    { headerName: "Body Temp.", field: "bodyTemp", width: 100 },
+    { headerName: "Pulse Rate", field: "pulseRate", width: 90 },
+    { headerName: "BP Systolic", field: "bloodPressureSystolic", width: 100 },
+    { headerName: "BP Diastolic", field: "bloodPressureDiastolic", width: 100 },
+    { headerName: "Respiration Rate", field: "respirationRate", width: 130 },
+    {
+      headerName: "Avg Exercise Per Week",
+      field: "avgWklyExercise",
+      width: 175,
+    },
+    { headerName: "Vacation Balance", field: "vacationBalance", width: 130 },
+    { headerName: "Avg Work Week", field: "avgWklyHrs", width: 120 },
+  ];
+
+  const [selectedRows, setSelectedRows] = React.useState([]);
+  const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
+
+  if (isPending) return "Loading...";
+  if (data)
+    return (
+      <>
+        <STYLE_1>
+          <h1
+            style={{
+              marginTop: "0px",
+              paddingBottom: "1.5rem",
+              paddingTop: "1.5rem",
+            }}
+          >
+            Employee Data summary
+          </h1>
+        </STYLE_1>
+        <CssBaseline>
+          <br />
+          <Grid
             container
             spacing={2}
             direction="row"
             justifyContent="center"
             align="center"
           >
-            
-              <Grid item xs={12} md={3} lg={3} >
-                    <button className="buttonNE" onClick={routeChangeReturnHome} >
-                            
-                                <span class="text">Return Home</span>
-                    </button>
-              </Grid>
-              <Grid item xs={12} md={6} lg={6}>
-                  <StatisticsReportModal />
-              </Grid>
-              <Grid item xs={12} md={3} lg={3}>
-              <button className="buttonNE3" onClick={routeChangeViewData}>
-                            
-                        <span class="text">Create Employee</span>
-                    </button>
-              </Grid>
+            <Grid item xs={12} md={3} lg={3}>
+              <button className="buttonNE" onClick={routeChangeReturnHome}>
+                <span class="text">Return Home</span>
+              </button>
             </Grid>
-        <br />
-        
-        <br />
-      </CssBaseline>
-      <div style={{ height: 400, width: "100%" }}>
-        <DataTable />
-      </div>
-      
-    </>
-  );
+            <Grid item xs={12} md={6} lg={6}>
+              <StatisticsReportModal data={selectedRows} />
+            </Grid>
+            <Grid item xs={12} md={3} lg={3}>
+              <button className="buttonNE3" onClick={routeChangeViewData}>
+                <span class="text">Create Employee</span>
+              </button>
+            </Grid>
+          </Grid>
+          <br />
+
+          <br />
+        </CssBaseline>
+        <div style={{ height: 400, width: "100%" }}>
+          <DataGrid
+            getRowId={(row) => row._id}
+            autoHeight
+            rows={data}
+            columns={columns}
+            pageSize={15}
+            checkboxSelection
+            onSelectionModelChange={(ids) => {
+              const selectedIDs = new Set(ids);
+              const selectedRowData = data.filter((row) =>
+                selectedIDs.has(row._id.toString())
+              );
+              setSelectedRows(selectedRowData);
+            }}
+            components={{ Toolbar: GridToolbar }}
+            rowsPerPageOptions={[15, 30, 60]}
+          />
+        </div>
+      </>
+    );
 }
 
 const STYLE_1 = styled.div`
@@ -68,6 +121,5 @@ const STYLE_1 = styled.div`
   text-align: center;
   font-family: "Ubuntu", sans-serif;
 `;
-
 
 export default ViewData;
