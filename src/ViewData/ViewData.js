@@ -159,7 +159,7 @@ function ViewData() {
                     <input
                       name='id'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Enter ID"
                       onChange={handleChange}
                     />
                   </label>
