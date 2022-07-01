@@ -51,6 +51,11 @@ function ViewData() {
   const [selectedRows, setSelectedRows] = React.useState([]);
   const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
 
+  let selected = false;
+  if (selectedRows.length !== 0) {
+    selected = true;
+  }
+
   if (isPending) return "Loading...";
   if (data)
     return (
@@ -81,7 +86,8 @@ function ViewData() {
               </button>
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
-              <StatisticsReportModal data={selectedRows} />
+              {!selected && <StatisticsReportModal data={data} />}
+              {selected && <StatisticsReportModal data={selectedRows} />}
             </Grid>
             <Grid item xs={12} md={3} lg={3}>
               <button className="buttonNE3" onClick={routeChangeViewData}>
