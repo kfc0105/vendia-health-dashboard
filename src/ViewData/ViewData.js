@@ -6,18 +6,34 @@ import SendIcon from "@mui/icons-material/Send";
 import DataTable from "./DataTable";
 import StatisticsReportModal from "../ViewData/StatisticsReportModal";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';
 import { client } from "../App";
 import { useAsync } from "react-async";
 
 const { entities } = client;
+
+const initialInputID = Object({
+  //vendia requies quotation mark to be present when request is sent 
+  'id': '""'
+})
 
 export async function getAllEmplData() {
   const response = await entities.employee.list();
   return response.items;
 }
 
+
+
 function ViewData() {
   let navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
 
   const routeChangeReturnHome = () => {
     navigate("/");
@@ -25,6 +41,31 @@ function ViewData() {
 
   const routeChangeViewData = () => {
     navigate("/addData");
+  };
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    navigate('/viewData')
+  };
+
+  const handleChange = (e) => {
+    updateInputid({
+      ...inputID,
+      [e.target.name]: e.target.value.trim(),
+    });
+  };
+
+  /*
+    It seems like it's been deleting different empoyee data then intended
+  */
+  const handleDelete = async () =>{
+    console.log(inputID['id'])
+    try { const response = await entities.employee.remove(inputID['id']); window.location.reload(); } 
+    catch (e) { document.getElementById("err").innerHTML = "THE INPUT IS INVALID"; }
   };
 
   const columns = [
@@ -50,6 +91,9 @@ function ViewData() {
 
   const [selectedRows, setSelectedRows] = React.useState([]);
   const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
+
+  const [inputID, updateInputid] = React.useState(initialInputID);
+
 
   let selected = false;
   if (selectedRows.length !== 0) {
@@ -96,6 +140,36 @@ function ViewData() {
             </Grid>
           </Grid>
           <br />
+
+          <Button onClick={handleClickOpen}>
+            Delete
+          </Button>
+          <Dialog open={open}>
+            <Alert severity="warning" onClose={handleClose}>
+              <AlertTitle>
+                Warning
+              </AlertTitle>
+                This is a warning alert — 
+                <strong>
+                    YOUR DATA WILL BE PERMENTLY DELETED
+                    *Reloads after successful request
+                </strong>
+                <form>
+                  <label>
+                    <input
+                      name='id'
+                      type="text"
+                      placeholder="Enter"
+                      onChange={handleChange}
+                    />
+                  </label>
+                </form>
+                <div id="err"></div>
+                <button onClick={handleDelete}>
+                  DELETE
+                </button>
+            </Alert>
+          </Dialog>
 
           <br />
         </CssBaseline>

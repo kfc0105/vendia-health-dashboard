@@ -34,6 +34,8 @@ function DataTable() {
     { headerName: "Avg Work Week", field: "avgWklyHrs", width: 120 },
   ];
   const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
+  console.log(data)
+  
   //const load = true;
   if (isPending) return (
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ff970f' }}>
