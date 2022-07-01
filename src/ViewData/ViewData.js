@@ -3,11 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SendIcon from "@mui/icons-material/Send";
-import DataTable from "./DataTable";
 import StatisticsReportModal from "../ViewData/StatisticsReportModal";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { client } from "../App";
 import { useAsync } from "react-async";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const { entities } = client;
 
@@ -56,7 +57,21 @@ function ViewData() {
     selected = true;
   }
 
-  if (isPending) return "Loading...";
+  if (isPending)
+    return (
+      <>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "#ff970f",
+          }}
+        >
+          <CircularProgress color="inherit" thickness={7} />
+        </Box>
+      </>
+    );
   if (data)
     return (
       <>
