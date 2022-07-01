@@ -17,7 +17,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import { useAsync } from "react-async";
-import img from '../bg_4_ne.svg'
+import img from '../bg2.svg'
 import ButtonStyle from './ButtonStyle.css'
 import EmployeeCards from './EmployeeCards.css'
 

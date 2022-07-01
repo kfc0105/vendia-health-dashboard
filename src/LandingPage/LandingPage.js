@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import TitleBarTop from './TitleBarTop.js';
 import OptionButtonsLP from './OptionButtonsLP.js'
 import DisplayStatistics from './DisplayStatistics.js';
-import img from '../new_bg.svg';
+import img from '../bg1.svg';
 import StatisticsTitle from './StatisticsTitle.js'
 
 function LandingPage() {
