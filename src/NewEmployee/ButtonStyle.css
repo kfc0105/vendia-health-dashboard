@@ -94,3 +94,12 @@
    .buttonNE3:hover::before {
     width: 10em;
    }
+
+   .buttonClear {
+    width: 270px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    height: 60px;
+    border-radius: 15px;
+    
+    background-color: rgb(253, 164, 105);
+   }

@@ -57,9 +57,13 @@ function ViewData() {
     selected = true;
   }
 
+
   if (isPending)
     return (
       <>
+      <br/><br/><br/><br/><br/>
+      <h1 style={{justifyContent: "center",
+            alignItems: "center", textAlign: 'center'}}>Loading Employee Data...</h1> <br/>
         <Box
           sx={{
             display: "flex",
@@ -68,6 +72,7 @@ function ViewData() {
             color: "#ff970f",
           }}
         >
+          
           <CircularProgress color="inherit" thickness={7} />
         </Box>
       </>
@@ -81,9 +86,10 @@ function ViewData() {
               marginTop: "0px",
               paddingBottom: "1.5rem",
               paddingTop: "1.5rem",
+              color: 'white'
             }}
           >
-            Employee Data summary
+            Employee Data Summary
           </h1>
         </STYLE_1>
         <CssBaseline>
@@ -138,7 +144,7 @@ function ViewData() {
 }
 
 const STYLE_1 = styled.div`
-  background-image: linear-gradient(to right, #fff5c6 0%, #fd8552 100%);
+  background-image: linear-gradient(to right, #ffed9f 0%, #d06a3f 100%);
   text-align: center;
   font-family: "Ubuntu", sans-serif;
 `;
