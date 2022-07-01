@@ -33,7 +33,6 @@ function DataTable() {
     { headerName: "Vacation Balance", field: "vacationBalance", width: 130 },
     { headerName: "Avg Work Week", field: "avgWklyHrs", width: 120 },
   ];
-
   const { data, isPending } = useAsync({ promiseFn: getAllEmplData });
   //const load = true;
   if (isPending) return (
@@ -56,7 +55,6 @@ function DataTable() {
             const selectedRowData = data.filter((row) =>
               selectedIDs.has(row._id.toString())
             );
-            console.log(selectedRowData);
           }}
           components={{ Toolbar: GridToolbar }}
           rowsPerPageOptions={[15, 30, 60]}
