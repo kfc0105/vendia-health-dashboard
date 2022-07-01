@@ -195,7 +195,7 @@ function NewEmployee() {
         <STYLE_TOP>
           
           <div style={{paddingTop: '1.5rem', paddingBottom: '1.5rem', verticalAlign: 'middle'}}>
-          <h1 style={{ marginTop: "0px", marginBottom: '0px' }}>
+          <h1 style={{ marginTop: "0px", marginBottom: '0px', color: 'white' }}>
             Create New Employee
           </h1>
 
@@ -289,11 +289,11 @@ function NewEmployee() {
                 <br />
                 <select name='"genderID"' placeholder="Enter" onChange={handleChange}>
                   <option value="" disabled selected style={{color: '#888888'}}>Select Gender</option>
-                  <option value="m">M</option>  
-                  <option value="f">F</option>
-                  <option value="t">T</option>
-                  <option value="n">N</option>
-                  <option value="np">NP</option>
+                  <option value="M">M</option>  
+                  <option value="F">F</option>
+                  <option value="T">T</option>
+                  <option value="NB">NB</option>
+                  <option value="NP">NP</option>
                 </select>
                 </div>
             </Grid>
@@ -454,23 +454,30 @@ function NewEmployee() {
         </Box>
         <br />
         <br />
-        <Button
+        <Box textAlign='center' justifyContent='center' alignItems='center'>
+          <Button
           variant="contained"
           style={{
             borderRadius: 30,
-            backgroundColor: "#6a9dff",
-            padding: "10px 30px",
-            fontSize: "15px",
+            backgroundColor: "#6696ff",
+            padding: "10px 120px",
+            fontSize: "17px",
+            justifyContent: 'center',
+            align: 'center'
           }}
           onClick={handleSubmit}
           sx={{
             borderRadius: 30,
-            display: "flex",
+            
           }}
         >
           {" "}
           Submit{" "}
         </Button>
+        </Box>
+          
+        
+        
         <Dialog
           open={open}
           aria-labelledby="statistics-report-title"
@@ -505,7 +512,7 @@ const STYLE_SM = styledComp.div`
 
 const STYLE_SM2 = styledComp.div`
     padding-top: 1rem;
-    padding-bottom: 1.9rem;
+    padding-bottom: .52rem;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.2rem;
@@ -520,15 +527,18 @@ const STYLE_SL = styledComp.div`
     font-size: 1.2rem;
 `;
 
+
+
 const MARGINS = styledComp.div`
     margin-right: 1.5rem;
     margin-left: 1.5rem;
 `;
 
 const STYLE_TOP = styledComp.div`
-    background-image: linear-gradient(to right, #c6feff 0%, #5288fd 100%);
+    background-image: linear-gradient(to right, #a8dcff 0%, #3f70da 100%);
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
+    color: 'white';
 `;
 
 const BACKGROUND = styledComp.div`
