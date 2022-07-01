@@ -74,6 +74,30 @@ export function getRangeBloodPressure(_data) {
     return range;
 }
 
+export function getRangeSysBloodPressure(_data) {
+    const employeeSysBloodPressures = _data.map( a => a.bloodPressureSystolic);
+
+    employeeSysBloodPressures.sort( (a, b) => {
+        return a - b;
+    });
+
+    const range = employeeSysBloodPressures[employeeSysBloodPressures.length - 1] - employeeSysBloodPressures[0];
+
+    return range;
+}
+
+export function getRangeDiasBloodPressure(_data) {
+    const employeeDiasBloodPressures = _data.map( a => a.bloodPressureDiastolic);
+
+    employeeDiasBloodPressures.sort( (a, b) => {
+        return a - b;
+    });
+
+    const range = employeeDiasBloodPressures[employeeDiasBloodPressures.length - 1] - employeeDiasBloodPressures[0];
+
+    return range;
+}
+
 export function getRangeRespirationRate(_data) {
     const employeeRespirationRates = _data.map( a => a.respirationRate);
 
