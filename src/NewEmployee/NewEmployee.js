@@ -39,6 +39,9 @@ const initialFormData = Object({
   '"respirationRate"': 0,
   '"vacationBalance"': 0,
   '"weight"': 0,
+  firstNameError: "",
+  lastNameError: "",
+  ageError: ""
 });
 
 
@@ -73,119 +76,145 @@ function NewEmployee() {
     });
   };
 
+  const validate = (e) => {
+    let validate = false;
+    if(input['"firstName"'].length < 1){
+      input['firstNameError'] = "First name cannot be blank";
+      validate = true;
+    }
+
+    if(input['"lastName"'].length < 1){
+      input['lastNameError'] = "Last name cannot be blank";
+      validate = true;
+    }
+    
+    if(input['"age"'] < 1){
+      input['ageError'] = "age cannot be less than one";
+      validate = true;
+    }
+    
+    return validate;
+  };
+
   const handleSubmit = async (e) => {
-    handleClickOpen();
-    e.preventDefault();
-    console.log(input)
-    
-    const response = await entities.employee.add({
-      age: parseFloat(input['"age"']),
-      avgWklyExercise: parseFloat(input['"avgWklyExercise"']),
-      avgWklyHrs: parseFloat(input['"avgWklyHrs"']),
-      bloodPressureDiastolic: parseFloat(input['"bloodPressureDiastolic"']),
-      bloodPressureSystolic: parseFloat(input['"bloodPressureSystolic"']),
-      bodyTemp: parseFloat(input['"bodyTemp"']),
-      firstName: input['"firstName"'],
-      genderID: input['"genderID"'],
-      height: parseFloat(input['"height"']),
-      lastName: input['"lastName"'],
-      pulseRate: parseFloat(input['"pulseRate"']),
-      respirationRate: parseFloat(input['"respirationRate"']),
-      vacationBalance: parseFloat(input['"vacationBalance"']),
-      weight: parseFloat(input['"weight"']),
-    },
-    
-    {
-      aclInput: {
-        acl: [ 
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "age",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "genderID",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "height",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "weight",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "bodyTemp",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "pulseRate",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "bloodPressureSystolic",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "bloodPressureDiastolic",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "respirationRate",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "avgWklyExercise",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "vacationBalance",
-            operations: ["READ"]
-          },
-          {
-            principal: {
-              nodes: ["*"]
-            },
-            path: "avgWklyHrs",
-            operations: ["READ"]
+    const isValid = validate();
+    if(isValid){
+      console.log(input['firstNameError']);
+      console.log(input['lastNameError']);
+      console.log(input['ageError']);
+    }
+    else{
+      handleClickOpen();
+      e.preventDefault();
+      const response = await entities.employee.add(
+        {
+          age: parseFloat(input['"age"']),
+          avgWklyExercise: parseFloat(input['"avgWklyExercise"']),
+          avgWklyHrs: parseFloat(input['"avgWklyHrs"']),
+          bloodPressureDiastolic: parseFloat(input['"bloodPressureDiastolic"']),
+          bloodPressureSystolic: parseFloat(input['"bloodPressureSystolic"']),
+          bodyTemp: parseFloat(input['"bodyTemp"']),
+          firstName: input['"firstName"'],
+          genderID: input['"genderID"'],
+          height: parseFloat(input['"height"']),
+          lastName: input['"lastName"'],
+          pulseRate: parseFloat(input['"pulseRate"']),
+          respirationRate: parseFloat(input['"respirationRate"']),
+          vacationBalance: parseFloat(input['"vacationBalance"']),
+          weight: parseFloat(input['"weight"']),
+        },
+        {
+          aclInput: {
+            acl: [ 
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "age",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "genderID",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "height",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "weight",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "bodyTemp",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "pulseRate",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "bloodPressureSystolic",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "bloodPressureDiastolic",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "respirationRate",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "avgWklyExercise",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "vacationBalance",
+                operations: ["READ"]
+              },
+              {
+                principal: {
+                  nodes: ["*"]
+                },
+                path: "avgWklyHrs",
+                operations: ["READ"]
+              }
+            ]
           }
-        ]
-      }
-    });
-    
+        }
+      );
+    }
   };
 
   return (
@@ -253,7 +282,7 @@ function NewEmployee() {
                       type="text"
                       placeholder="First Name"
                       onChange={handleChange}
-                    />
+                    /> 
                   </label>
 
                   <label>
