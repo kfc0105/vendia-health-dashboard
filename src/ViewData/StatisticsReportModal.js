@@ -30,23 +30,12 @@ export default function StatisticsReportModal({ data }) {
   } else {
     return (
       <div>
-        <Button
-          variant="contained"
-          style={{
-            borderRadius: 30,
-            backgroundColor: "#ffa55a",
-            padding: "10px 30px",
-            fontSize: "15px",
-          }}
-          onClick={handleClickOpen}
-          sx={{
-            borderRadius: 30,
-            display: "flex",
-          }}
+        <button
+          class="buttonClear" onClick={handleClickOpen} 
         >
           {" "}
           Statistics Report{" "}
-        </Button>
+        </button>
         <Dialog
           open={open}
           onClose={handleClose}
