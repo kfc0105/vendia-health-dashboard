@@ -1,0 +1,9 @@
+.cardMDL {
+    width: 270px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    height: 320px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(243, 243, 243, 0.25);
+   
+}
