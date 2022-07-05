@@ -5,8 +5,10 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import StatReportStyle from './StatReportStyle.css'
 import styled from "styled-components";
 import Grid from "@mui/material/Grid";
+import img from '../bg1.svg'
 import * as Avg from "../calculations/AverageFunctions";
 import * as StdDev from "../calculations/StdDevFunctions";
 import * as Mode from "../calculations/ModeFunctions";
@@ -34,7 +36,7 @@ export default function StatisticsReportModal({ data }) {
           class="buttonClear" onClick={handleClickOpen} 
         >
           {" "}
-          Statistics Report{" "}
+          Create Custom Report{" "}
         </button>
         <Dialog
           open={open}
@@ -46,175 +48,384 @@ export default function StatisticsReportModal({ data }) {
             {"Employee Data Report"}
           </DialogTitle>
           <DialogContent>
+          <STYLE_MODAL>
             <DialogContentText id="report"></DialogContentText>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Age: </STYLE>
-                <div>Average: {Math.round(Avg.getAverageAge(data))}</div>
-                <div>Median: {Math.round(Median.getMedianAge(data))}</div>
-                <div>Mode: {JSON.stringify(Mode.getModeAge(data))}</div>
-                <div>Range: {Range.getRangeAge(data)}</div>
-                <div>
-                  Standard Deviation: {Math.round(StdDev.getStdDevAge(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageAge(data))} </span>
                 <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianAge(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeAge(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevAge(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeAge(data))}</span>
+                </STYLE_STATS>
+                
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Height: </STYLE>
-                <div>Average: {Math.round(Avg.getAverageHeight(data))}</div>
-                <div>Median: {Math.round(Median.getMedianHeight(data))}</div>
-                <div>Mode: {JSON.stringify(Mode.getModeHeight(data))}</div>
-                <div>Range: {Range.getRangeHeight(data)}</div>
-                <div>
-                  Standard Deviation: {Math.round(StdDev.getStdDevHeight(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageHeight(data))} </span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianHeight(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeHeight(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevHeight(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeHeight(data))}</span>
+                </STYLE_STATS>
 
-                <br />
+              
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Weight: </STYLE>
-                <div>Average: {Math.round(Avg.getAverageWeight(data))}</div>
-                <div>Median: {Math.round(Median.getMedianWeight(data))}</div>
-                <div>Mode: {JSON.stringify(Mode.getModeWeight(data))}</div>
-                <div>Range: {Range.getRangeWeight(data)}</div>
-                <div>
-                  Standard Deviation: {Math.round(StdDev.getStdDevWeight(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageWeight(data))} </span>
                 <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianWeight(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeWeight(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevWeight(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeWeight(data))}</span>
+                </STYLE_STATS>
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Body Temperature: </STYLE>
-                <div>
-                  Average: {Math.round(Avg.getAverageBodyTemp(data) * 10) / 10}
-                </div>
-                <div>
-                  Median: {Math.round(Median.getMedianBodyTemp(data) * 10) / 10}
-                </div>
-                <div>Mode: {JSON.stringify(Mode.getModeBodyTemp(data))}</div>
-                <div>
-                  Range: {Math.round(Range.getRangeBodyTemp(data) * 10) / 10}
-                </div>
-                <div>
-                  Standard Deviation:{" "}
-                  {Math.round(StdDev.getStdDevBodyTemp(data) * 10) / 10}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageBodyTemp(data) * 10) / 10} </span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianBodyTemp(data) * 10) / 10}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(Range.getRangeBodyTemp(data) * 10) / 10} </span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevBodyTemp(data) * 10) / 10}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '12.5px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeBodyTemp(data))} </span>
+                </STYLE_STATS>
                 <br />
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Pulse Rate: </STYLE>
-                <div>Average: {Math.round(Avg.getAveragePulseRate(data))}</div>
-                <div>Median: {Math.round(Median.getMedianPulseRate(data))}</div>
-                <div>Mode: {JSON.stringify(Mode.getModePulseRate(data))}</div>
-                <div>Range: {Range.getRangePulseRate(data)}</div>
-                <div>
-                  Standard Deviation:{" "}
-                  {Math.round(StdDev.getStdDevPulseRate(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAveragePulseRate(data))} </span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianPulseRate(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangePulseRate(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevPulseRate(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModePulseRate(data))}</span>
+                </STYLE_STATS>
                 <br />
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Blood Pressure (S/D): </STYLE>
-                <div>Average: {Avg.getAverageBloodPressure(data)}</div>
-                <div>Median: {Median.getMedianBloodPressure(data)}</div>
-                <div>
-                  Mode (S): {JSON.stringify(Mode.getModeSysBloodPressure(data))}
-                </div>
-                <div>
-                  Mode (D):{" "}
-                  {JSON.stringify(Mode.getModeDiasBloodPressure(data))}
-                </div>
-                <div>Range: {Range.getRangeBloodPressure(data)}</div>
-                <div>
-                  Standard Deviation: {StdDev.getStdDevBloodPressure(data)}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Avg.getAverageBloodPressure(data)} </span>
                 <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Median.getMedianBloodPressure(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeBloodPressure(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{StdDev.getStdDevBloodPressure(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode (S): </span>
+                <span style={{
+                fontSize: '12.5px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeSysBloodPressure(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode (D): </span>
+                <span style={{
+                fontSize: '12.5px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeDiasBloodPressure(data))}</span>
+                </STYLE_STATS>
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Respiration Rate: </STYLE>
-                <div>
-                  Average: {Math.round(Avg.getAverageRespirationRate(data))}
-                </div>
-                <div>
-                  Median: {Math.round(Median.getMedianRespirationRate(data))}
-                </div>
-                <div>
-                  Mode: {JSON.stringify(Mode.getModeRespirationRate(data))}
-                </div>
-                <div>Range: {Range.getRangeRespirationRate(data)}</div>
-                <div>
-                  Standard Deviation:{" "}
-                  {Math.round(StdDev.getStdDevRespirationRate(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageRespirationRate(data))} </span>
                 <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianRespirationRate(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeRespirationRate(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevRespirationRate(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeRespirationRate(data))}</span>
+                </STYLE_STATS>
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE_SM> Hours of exercise per week: </STYLE_SM>
-                <div>
-                  Average: {Math.round(Avg.getAverageWklyExercise(data))}
-                </div>
-                <div>
-                  Median: {Math.round(Median.getMedianWklyExercise(data))}
-                </div>
-                <div>
-                  Mode: {JSON.stringify(Mode.getModeWklyExercise(data))}
-                </div>
-                <div>Range: {Range.getRangeWklyExercise(data)}</div>
-                <div>
-                  Standard Deviation:{" "}
-                  {Math.round(StdDev.getStdDevWklyExercise(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageWklyExercise(data))} </span>
                 <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianWklyExercise(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeWklyExercise(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevWklyExercise(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeWklyExercise(data))}</span>
+                </STYLE_STATS>
               </div>
+              <br /><br />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE_SM> Hours of work per week: </STYLE_SM>
-                <div>Average: {Math.round(Avg.getAverageWklyHrs(data))}</div>
-                <div>Median: {Math.round(Median.getMedianWklyHrs(data))}</div>
-                <div>Mode: {JSON.stringify(Mode.getModeWklyHrs(data))}</div>
-                <div>Range: {Range.getRangeWklyHrs(data)} </div>
-                <div>
-                  Standard Deviation:{" "}
-                  {Math.round(StdDev.getStdDevWklyHrs(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageWklyHrs(data))} </span>
                 <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianWklyHrs(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeWklyHrs(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevWklyHrs(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeWklyHrs(data))}</span>
+                </STYLE_STATS>
               </div>
+              <br /><br />
             </Grid>
+            
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <div class="card">
+              <div class="cardMDL">
                 <STYLE> Vacation Balance: </STYLE>
-                <div>
-                  Average: {Math.round(Avg.getAverageVacationBalance(data))}
-                </div>
-                <div>
-                  Median: {Math.round(Median.getMedianVacationBalance(data))}
-                </div>
-                <div>
-                  Mode: {JSON.stringify(Mode.getModeVacationBalance(data))}
-                </div>
-                <div>Range: {Range.getRangeVacationBalance(data)} </div>
-                <div>
-                  Standard Deviation:{" "}
-                  {Math.round(StdDev.getStdDevVacationBalance(data))}
-                </div>
+                <STYLE_STATS>
+                <span style={{textAlign: "left"}}>Average:</span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Avg.getAverageVacationBalance(data))} </span>
                 <br />
+                <br />
+                <span style={{textAlign: "left"}}>Median: </span>
+                <span style={{
+                  fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}> {Math.round(Median.getMedianVacationBalance(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Range: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Range.getRangeVacationBalance(data)}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Std Dev: </span>
+                <span style={{
+                fontSize: '23px', color: '#fc8a26', float: 'right'
+                }}>{Math.round(StdDev.getStdDevVacationBalance(data))}</span>
+                <br />
+                <br />
+                <span style={{textAlign: "left"}}>Mode: </span>
+                <span style={{
+                fontSize: '14px', color: '#fc8a26', float: 'right'
+                }}>{JSON.stringify(Mode.getModeVacationBalance(data))}</span>
+                </STYLE_STATS>
+            
               </div>
+              <br /><br />
             </Grid>
+            </STYLE_MODAL>
           </DialogContent>
+          
           <DialogActions>
             <Button onClick={handleClose} autoFocus>
               Close
@@ -228,8 +439,7 @@ export default function StatisticsReportModal({ data }) {
 
 const STYLE = styled.div`
   padding-top: 1rem;
-  padding-left: 1.2rem;
-  text-align: left;
+  text-align: center;
   font-family: "Ubuntu", sans-serif;
   font-size: 1.1rem;
 `;
@@ -240,4 +450,31 @@ const STYLE_SM = styled.div`
   text-align: left;
   font-family: "Ubuntu", sans-serif;
   font-size: 0.88rem;
+`;
+
+const STYLE_MODAL = styled.div`
+  padding-right: 5rem;
+  padding-left: 5rem;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.88rem;
+`;
+
+const BACKGROUND = styled.div`
+  background-image: url(${img});
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-bottom: 0px;
+
+`
+
+const STYLE_STATS = styled.div`
+  padding-top: 1rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+  font-size: .9rem;
 `;

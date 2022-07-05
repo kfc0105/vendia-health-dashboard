@@ -133,7 +133,7 @@ function ViewData() {
               color: 'white'
             }}
           >
-            Employee Data Summary
+            Custom Employee Data Summary
           </h1>
         </STYLE_1>
         <CssBaseline>
@@ -160,17 +160,16 @@ function ViewData() {
               </button>
             </Grid>
           </Grid>
-          <br />
+          <br /><br /><br />
 
           <Button onClick={handleClickOpen}>
-            Delete
+            Choose Employee to Remove
           </Button>
           <Dialog open={open}>
             <Alert severity="warning" onClose={handleClose}>
               <AlertTitle>
                 Warning
               </AlertTitle>
-                This is a warning alert — 
                 <strong>
                     YOUR DATA WILL BE PERMENTLY DELETED
                     *Reloads after successful request
@@ -186,8 +185,8 @@ function ViewData() {
                   </label>
                 </form>
                 <div id="err"></div>
-                <button onClick={handleDelete}>
-                  DELETE
+                <button onClick={handleDelete} justifyContent='center' alignItems='center'>
+                  Delete
                 </button>
             </Alert>
           </Dialog>
