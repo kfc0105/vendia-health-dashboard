@@ -89,23 +89,28 @@ function NewEmployee() {
     }
     
     if(input['"age"'] < 1){
-      input['ageError'] = "age cannot be less than one";
+      input['ageError'] = "Age cannot be less than one";
       validate = true;
     }
     
     return validate;
   };
 
+  
+
   const handleSubmit = async (e) => {
     const isValid = validate();
     if(isValid){
-      console.log(input['firstNameError']);
-      console.log(input['lastNameError']);
-      console.log(input['ageError']);
+      //console.log(input['firstNameError']);
+      //console.log(input['lastNameError']);
+      //console.log(input['ageError']);
+      alert(input['firstNameError'] + '\n' + input['lastNameError'] + '\n' + input['ageError']);
+      
     }
     else{
       handleClickOpen();
       e.preventDefault();
+      
       const response = await entities.employee.add(
         {
           age: parseFloat(input['"age"']),
@@ -284,7 +289,7 @@ function NewEmployee() {
                       onChange={handleChange}
                     /> 
                   </label>
-
+              
                   <label>
                     <input
                       name='"lastName"'
