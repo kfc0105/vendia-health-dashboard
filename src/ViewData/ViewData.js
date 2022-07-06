@@ -70,6 +70,7 @@ function ViewData() {
   };
 
   const columns = [
+    {headerName: "ID", field: "_id", width: 300 },
     { headerName: "First Name", field: "firstName", width: 100 },
     { headerName: "Last Name", field: "lastName", width: 100 },
     { headerName: "Age", field: "age", width: 70 },
