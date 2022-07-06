@@ -310,7 +310,7 @@ function NewEmployee() {
                     <input
                       name='"age"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Years (e.g. 35)"
                       onChange={handleChange}
                     />
                   </label>
@@ -340,7 +340,7 @@ function NewEmployee() {
                     <input
                       name='"height"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Inches (e.g. 60)"
                       onChange={handleChange}
                     />
                   </label>
@@ -356,7 +356,7 @@ function NewEmployee() {
                     <input
                       name='"weight"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Pounds (e.g. 180)"
                       onChange={handleChange}
                     />
                   </label>
@@ -372,7 +372,7 @@ function NewEmployee() {
                     <input
                       name='"bodyTemp"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Degrees Fahrenheit (e.g. 98.7)"
                       onChange={handleChange}
                     />
                   </label>
@@ -388,7 +388,7 @@ function NewEmployee() {
                     <input
                       name='"pulseRate"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="BPM (e.g. 78)"
                       onChange={handleChange}
                     />
                   </label>
@@ -404,7 +404,7 @@ function NewEmployee() {
                     <input
                       name='"bloodPressureSystolic"'
                       type="text"
-                      placeholder="Enter systolic value"
+                      placeholder="Systolic (e.g. 120)"
                       onChange={handleChange}
                     />
                   </label>
@@ -412,7 +412,7 @@ function NewEmployee() {
                     <input
                       name='"bloodPressureDiastolic"'
                       type="text"
-                      placeholder="Enter diastolic value"
+                      placeholder="Diastolic (e.g. 80)"
                       onChange={handleChange}
                     />
                   </label>
@@ -428,7 +428,7 @@ function NewEmployee() {
                     <input
                       name='"respirationRate"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Breaths Per Minute (e.g. 15)"
                       onChange={handleChange}
                     />
                   </label>
@@ -444,7 +444,7 @@ function NewEmployee() {
                     <input
                       name='"avgWklyExercise"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Hours (e.g. 5)"
                       onChange={handleChange}
                     />
                   </label>
@@ -460,7 +460,7 @@ function NewEmployee() {
                     <input
                       name='"vacationBalance"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Hours (e.g. 80)"
                       onChange={handleChange}
                     />
                   </label>
@@ -477,7 +477,7 @@ function NewEmployee() {
                     <input
                       name='"avgWklyHrs"'
                       type="text"
-                      placeholder="Enter"
+                      placeholder="Hours (e.g. 40)"
                       onChange={handleChange}
                     />
                   </label>
