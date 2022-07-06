@@ -410,7 +410,8 @@ const STYLE = styled.div`
   padding-top: 1rem;
   text-align: center;
   font-family: "Ubuntu", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
 `;
 
 const STYLE_STATS = styled.div`
@@ -426,6 +427,7 @@ const STYLE_SM = styled.div`
   padding-top: 1rem;
   font-family: "Ubuntu", sans-serif;
   font-size: 1.0rem;
+  font-weight: 600;
 `;
 
 export default DisplayStatistics;
